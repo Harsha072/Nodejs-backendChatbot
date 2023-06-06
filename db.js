@@ -34,6 +34,3 @@ async function connectDb() {
 
 module.exports = { connectDb };
 
-
-
-{/* <iframe src="https://giphy.com/embed/cFymzwrFON2lOJEAMS" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/basketballmadness-kentucky-wildcats-mbb-wbb-cFymzwrFON2lOJEAMS">via GIPHY</a></p> */}

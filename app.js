@@ -14,17 +14,13 @@ var express = require('express'),
     index = require('./routes/index');
     
     var app = express();
-// app.use(cors({
-//   origin: 'https://master.d3k1bcu80lqkdq.amplifyapp.com',
-//   credentials: true,
-//   exposedHeaders: ['Access-Control-Allow-Origin']
-// }));
+
     const sessionMiddleware = session({
       secret: 'some secret string',
       resave: false,
       saveUninitialized: true,
       cookie: {
-        maxAge: 180000 // 3 minutes in milliseconds
+        maxAge: 1200000 // 3 minutes in milliseconds
       }
     });
     app.use(sessionMiddleware);
