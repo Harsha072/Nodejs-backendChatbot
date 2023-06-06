@@ -23,8 +23,8 @@ var express = require('express'),
     //     maxAge: 1200000 // 3 minutes in milliseconds
     //   }
     // });
-    app.use(sessionMiddleware);
-    sessionMiddleware.debug = true;
+    // app.use(sessionMiddleware);
+    // sessionMiddleware.debug = true;
 
   
 
