@@ -12,7 +12,7 @@ async function connectDb() {
     console.log('Using existing harsha client instance harsha');
     return{ client, quiz,users,prequiz,postquiz };
   } else {
-    console.log("new harsha connection")
+    console.log("new harsha connection to new db")
     client = new DynamoDBClient({
       region: "us-east-1"
       });

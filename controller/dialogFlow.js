@@ -14,7 +14,7 @@ async function runIntent(projectId, requestText,event) {
     const [Dkey, Demail]= await someFunction()
 
 var newKey = Dkey.replace(/\\n/g, '\n').trim()
-
+console.log("the key",newKey)
 
 try{
 
