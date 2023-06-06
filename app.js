@@ -15,39 +15,39 @@ var express = require('express'),
     
     var app = express();
 
-    // const sessionMiddleware = session({
-    //   secret: 'some secret string',
-    //   resave: false,
-    //   saveUninitialized: true,
-    //   cookie: {
-    //     maxAge: 1200000 // 3 minutes in milliseconds
-    //   }
-    // });
-    // app.use(sessionMiddleware);
-    // sessionMiddleware.debug = true;
+    const sessionMiddleware = session({
+      secret: 'some secret string',
+      resave: false,
+      saveUninitialized: true,
+      cookie: {
+        maxAge: 1200000 // 3 minutes in milliseconds
+      }
+    });
+    app.use(sessionMiddleware);
+    sessionMiddleware.debug = true;
 
   
 
 
     //this code works for cors change okta change okt aconfig to https://master.d3k1bcu80lqkdq.amplifyapp.com/
 
-    // const corsOptions = {
-    //   credentials: true,
-    //   origin: function(origin, callback) {
-    //     console.log("the origin", origin);
-    //     // allow requests from localhost or your production domain
-    //     if (origin === 'https://master.d3k1bcu80lqkdq.amplifyapp.com') {
-    //       callback(null, true);
-    //     }
-    //     // otherwise, reject the request
-    //     else {
-    //       callback(new Error('Not allowed by CORS'));
-    //     }
-    //   },
-    //   exposedHeaders: ['Access-Control-Allow-Origin'],
-    // };
+    const corsOptions = {
+      credentials: true,
+      origin: function(origin, callback) {
+        console.log("the origin", origin);
+        // allow requests from localhost or your production domain
+        if (origin === 'https://master.d3k1bcu80lqkdq.amplifyapp.com') {
+          callback(null, true);
+        }
+        // otherwise, reject the request
+        else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
+      exposedHeaders: ['Access-Control-Allow-Origin'],
+    };
     
-    // app.use(cors(corsOptions));
+    app.use(cors(corsOptions));
     
    
 
@@ -88,14 +88,14 @@ app.use(function(err, req, res, next) {
     error: {}
   }});
 });
-// config.someFunction()
-// db.connectDb()
-// module.exports.server = sls(app);
+config.someFunction()
+db.connectDb()
+module.exports.server = sls(app);
 
-var server = app.listen(process.env.PORT || 8080, function(){
-  console.log('Listening on port harsha calling both fucntions new  ' + server.address().port);
-   config.someFunction()
-  db.connectDb()
+// var server = app.listen(process.env.PORT || 8080, function(){
+//   console.log('Listening on port harsha calling both fucntions new  ' + server.address().port);
+//    config.someFunction()
+//   db.connectDb()
  
-});
+// });
 
