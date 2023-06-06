@@ -15,14 +15,14 @@ var express = require('express'),
     
     var app = express();
 
-    const sessionMiddleware = session({
-      secret: 'some secret string',
-      resave: false,
-      saveUninitialized: true,
-      cookie: {
-        maxAge: 1200000 // 3 minutes in milliseconds
-      }
-    });
+    // const sessionMiddleware = session({
+    //   secret: 'some secret string',
+    //   resave: false,
+    //   saveUninitialized: true,
+    //   cookie: {
+    //     maxAge: 1200000 // 3 minutes in milliseconds
+    //   }
+    // });
     app.use(sessionMiddleware);
     sessionMiddleware.debug = true;
 
