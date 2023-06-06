@@ -146,7 +146,7 @@ try {
 
   router.post('/login', async (req, res) => {
     const newUser = req.body
-   console.log("backend data new login harsha ",newUser)
+   console.log("backend data new login harshacvbvcnvbn ",newUser)
    const { client,users } = await connectDb();
 
 const params ={
@@ -263,9 +263,10 @@ const presentUser = await client.send(new GetItemCommand(params))
     console.log("info ",req.session)
     try {
       if (req.session.user) {
-        console.log("inside if ")
+        console.log("inside if userinfo ")
         const now = new Date().getTime();
-        const expires = new Date(req.session.cookie._expires).getTime(); // Use _expires instead of expires
+        const expires = new Date(req.session.cookie._expires).getTime();
+        console.log("the expire ",expires) // Use _expires instead of expires
         if (now < expires) {
           console.log("Session has not expired, return user info")
           res.json(req.session.user);

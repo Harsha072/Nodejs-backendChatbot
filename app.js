@@ -20,7 +20,7 @@ var express = require('express'),
       resave: false,
       saveUninitialized: true,
       cookie: {
-        maxAge: 1200000 // 3 minutes in milliseconds
+        maxAge: 1200000// 3 minutes in milliseconds
       }
     });
     app.use(sessionMiddleware);
@@ -36,7 +36,7 @@ var express = require('express'),
       origin: function(origin, callback) {
         console.log("the origin", origin);
         // allow requests from localhost or your production domain
-        if (origin === 'https://master.d3k1bcu80lqkdq.amplifyapp.com') {
+        if (origin === 'https://master.d3k1bcu80lqkdq.amplifyapp.com'|| origin === 'http://localhost:4200') {
           callback(null, true);
         }
         // otherwise, reject the request
